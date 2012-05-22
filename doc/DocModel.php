@@ -703,8 +703,10 @@ class DocModel
                /*
                 * Strip & if pass by reference
                 */
-               if($param[0]=='&')
-                  $param=substr($param,1);
+               if (isset($param[0])) {
+                  if($param[0]=='&')
+                     $param=substr($param,1);
+               }
                /*
                 * add parameter info to the docParam array
                 */
