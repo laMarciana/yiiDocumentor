@@ -8,8 +8,8 @@ For applications and extensions, it allows to add links to its code source in an
 
 ## Installation
 
-* Download it from https://github.com/laMarciana/yiiDocumentor/zipball/master.
-* Extract it in the `protected/commands/` of your Yii installation
+* Download it from [https://github.com/laMarciana/yiiDocumentor/zipball/master](https://github.com/laMarciana/yiiDocumentor/zipball/master).
+* Extract it in the `protected/commands/` of your Yii installation (`DocCommand.php` file and `doc` folder must be in this directory and not in any of its subdirectories)
 
 ## Usage
 
@@ -74,6 +74,11 @@ Here it is an example:
       'with_yii' => false,
       'with_yii_links' => true,
     );
+
+## Resources
+
+* [Yii Documentor homepage](https://github.com/laMarciana/yiiDocumentor)
+* [Yii Documentor in Yii extensions directory](http://www.yiiframework.com/extension/yiidocumentor/)
 
 ## License
 
