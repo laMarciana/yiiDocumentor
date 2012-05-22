@@ -126,7 +126,7 @@ class DocCommand extends CConsoleCommand
       'exclude' => array(
          '.svn',
          '.git',
-         'views/',
+         'views',
       ),
    );
 
@@ -254,6 +254,12 @@ EOD;
          $this->baseSourceUrl = isset($config['source_url']) ? $config['source_url'] : null;
          //line_anchor_preffix
          $this->anchorLinePreffix = isset($config['anchor_line_preffix']) ? $config['anchor_line_preffix'] : null;
+         //exclude options
+         if (isset($config['exclude'])) {
+            if (is_array($config['exclude'])) {
+               $options['exclude'] = array_merge($options['exclude'], $config['exclude']);
+            }
+         }
       }
       /*For an application whic yii and extensions are not included, we need to add extensions folder to the include path*/
       if ($this->basePath === APP_PATH) {

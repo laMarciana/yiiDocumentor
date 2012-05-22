@@ -13,6 +13,8 @@ For applications and extensions, it allows to add links to its code source in an
 
 ## Usage
 
+**Please, if you are getting problems and also for security reasons read in the 'Configuration' section the information about the `exclude` option.**
+
 Launch new command `doc` with your `protected/yiic` file (or use `yiic.php` script, or `yiic.bat` in Windows):
 
     yiic doc
@@ -55,6 +57,7 @@ for an extension.
 
 `api.php` must return an associative array. Following are accepted keys and the means of its values:
 
+* `exclude`: Array. List of directory and files to be excluded from the API. While building the API reference, Yii Documentor must include all the files to get the classes declared, so unexpected errors can arise or you can execute code you don't want to (if for example someday you decided to save a php file that remove completely your hard disk in a directory that now you are going to document). Use this option to exclude some extensions view directories and any other files that are giving you troubles. The base path is `protected/` for an application and `protected/extensions/<ext-directory-name>` for an extension. Look at `CFileHelper::findFiles` `$options` parameter to get details on how to declare this array. Note that to exclude a `folder/` you have to write `folder` (without last backslash).
 * `name`: String. The name of the application or the extension. If not set, the application name in `main.php` or `console.php` will be used for an application, or the extension's directory name for an extension.
 * `url`: String. A url to the homepage of the application or extension. It will be used to link the name. If it is not set, no link will be added.
 * `source_url`: String. A url that points to a respository where the source code is. Used in the links to source code. Ex: `https://github.com/laMarciana/yiiDocumentor/blob/master`
@@ -67,6 +70,7 @@ Here it is an example:
 
     //api.php
     return array(
+      'exclude' => array('gii'),
       'name' => 'My Yii Extenstion',
       'url' => 'http://www.myyiiextension.com',
       'source_url' => 'https://github.com/anyUser/MyYiiExtension/blob/master',
