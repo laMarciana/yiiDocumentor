@@ -43,6 +43,8 @@ Additionally, if second parameter is `check` it just checks if each piece of cod
 
 ## Configuration
 
+### File configuration
+
 For an application or an extension, *Yii Documentor* behaviour can be customized through an `api.php` configuration file.
 
 This configuration file must be located in:
@@ -79,6 +81,13 @@ Here it is an example:
       'with_yii_links' => true,
     );
 
+### Commande line configuration
+
+You can also pass configuration options using command line. It will be used if no config file is found.
+Only string parameters can be passed (see above).
+
+	./yiic doc app ../outputdir/ name="My app name"
+
 ## Resources
 
 * [Yii Documentor homepage](https://github.com/laMarciana/yiiDocumentor)
@@ -88,6 +97,8 @@ Here it is an example:
 
 Copyright 2012, Marc Busqué Pérez, under GNU LESSER GENERAL PUBLIC LICENSE 3
 marc@lamarciana.com - http://www.lamarciana.com
+
+Contributed by [SebSept](https://github.com/SebSept/).
 
 Heavily based on previous work of:
 

@@ -219,7 +219,14 @@ EOD;
          if (file_exists($config_path)) {
             $config = require_once($config_path);
          } else {
-            $config = array();
+             $config = array();
+             foreach(array_slice($args, 2) AS $_arg)
+             {
+                 $r = array();
+                 parse_str($_arg, $r);
+                 $config = array_merge($config, $r );
+             }
+             unset($r);
          }
          //Add yii reference?
          if (isset($config['with_yii'])) {

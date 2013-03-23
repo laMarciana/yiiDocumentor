@@ -1,3 +1,7 @@
+2013-03-23 Sébastien Monterisi
+
+* Version 1.2 Add command line options (strings only)
+
 2012-05-22  Marc Busqué  <marc@lamarciana.com>
 
 * Version 1.1. Add exclude option
